@@ -1,0 +1,34 @@
+#using yml for profile-specific information
+
+#default profile
+
+spring:
+  config:
+    activate:
+      on-profile: default
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://photo-discovery-server-container:8761/eureka
+
+---
+
+#dev profile
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
